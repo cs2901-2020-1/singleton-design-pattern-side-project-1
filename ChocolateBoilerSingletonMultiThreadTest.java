@@ -1,5 +1,6 @@
 public class ChocolateBoilerSingletonMultiThreadTest extends Thread{
     public static void test(){
+        System.out.println("\nTest ChocolateBoilerSingleton MultiThreadTest");
         Multithread t1 = new Multithread( "Thread-1");
         t1.start();
 

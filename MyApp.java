@@ -10,22 +10,10 @@ public class MyApp {
         ChocolateBoilerSingleton chocoSingleton2 = ChocolateBoilerSingleton.getInstance();
 
         // Create ChocolateBoilerTest
-        boolean resultAreEquals = ChocolateBoilerTest.test(choco1, choco2);
-        if(resultAreEquals){
-            System.out.println("Objetos iguales");
-        }
-        else{
-            System.out.println("Objetos diferentes. Objeto 1: " + choco1 + ", Objeto 2:" + choco2);
-        }
+        ChocolateBoilerTest.test(choco1, choco2);
 
         // Create ChocolateBoilerSingletonTest
-        boolean result2AreEquals = ChocolateBoilerSingletonTest.test(chocoSingleton1, chocoSingleton2);
-        if(result2AreEquals){
-            System.out.println("Objetos iguales. Objeto1: " + chocoSingleton1 + ", Objeto2: " + chocoSingleton2);
-        }
-        else{
-            System.out.println("Objetos diferentes. Objeto 1: " + choco1 + ", Objeto 2:" + choco2);
-        }
+        ChocolateBoilerSingletonTest.test(chocoSingleton1, chocoSingleton2);
 
         // Create ChocolateBoilerSingletonMultiThreadTest
         ChocolateBoilerSingletonMultiThreadTest.test();
