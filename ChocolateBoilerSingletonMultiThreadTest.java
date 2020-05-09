@@ -17,7 +17,9 @@ class MultiThread extends Thread {
     }
   
     public void run() {
+        /* Coloca aqui el test
         ChocolateBoilerSingletonTest test = new ChocolateBoilerSingletonTest();
         test.execute();
+        */
     }
 }
