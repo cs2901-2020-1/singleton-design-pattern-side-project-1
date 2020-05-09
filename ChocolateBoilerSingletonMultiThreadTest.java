@@ -1,23 +1,45 @@
-public class ChocolateBoilerSingletonMultiThreadTest {
-    public static void main(String args[]) {
-        MultiThread multiThread;
-        for (int i = 0; i < 4; i++) {
-            multiThread = new MultiThread();
-            if (multiThread.isAlive()) {
-                System.out.println("Thread " + i + " launched");
-            }
-        }
+public class ChocolateBoilerSingletonMultiThreadTest extends Thread{
+    public static void test(){
+        Multithread t1 = new Multithread( "Thread-1");
+        t1.start();
+
+        Multithread t2 = new Multithread( "Thread-2");
+        t2.start();
     }
 }
 
-class MultiThread extends Thread {
-    
-    MultiThread() {
-        start();
+class Multithread extends Thread{
+    private Thread t;
+    private String threadName;
+
+    Multithread( String name) {
+        threadName = name;
+        System.out.println("Creating " +  threadName );
     }
-  
+
     public void run() {
-        ChocolateBoilerSingletonTest test = new ChocolateBoilerSingletonTest();
-        test.execute();
+        System.out.println("Running " +  threadName );
+        try{
+            Thread.sleep((long)(Math.random()* 1000));
+            ChocolateBoilerSingleton chocoSingleton = ChocolateBoilerSingleton.getInstance();
+            if(chocoSingleton.isEmpty()){
+                System.out.println("Fill by: " +  threadName );
+                chocoSingleton.fill();
+            }
+            else{
+                System.out.println("It's already filled");
+            }
+        }
+        catch (InterruptedException e) {
+            System.out.println("Thread " +  threadName + " interrupted.");
+        }
+    }
+
+    public void start () {
+        System.out.println("Starting " +  threadName );
+        if (t == null) {
+            t = new Thread (this, threadName);
+            t.start ();
+        }
     }
 }

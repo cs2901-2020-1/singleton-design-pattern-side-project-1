@@ -28,5 +28,6 @@ public class MyApp {
         }
 
         // Create ChocolateBoilerSingletonMultiThreadTest
+        ChocolateBoilerSingletonMultiThreadTest.test();
     }
 }
