@@ -1,10 +1,23 @@
-public class ChocolateBoilerSingletonMultiThreadTest extends Thread {
-    public void run() {
-
-    }
-
+public class ChocolateBoilerSingletonMultiThreadTest {
     public static void main(String args[]) {
-        ChocolateBoilerSingletonMultiThreadTest obj = new ChocolateBoilerSingletonMultiThreadTest();
-        obj.start();
+        MultiThread multiThread;
+        for (int i = 0; i < 4; i++) {
+            multiThread = new MultiThread();
+            if (multiThread.isAlive()) {
+                System.out.println("Thread " + i + " launched");
+            }
+        }
+    }
+}
+
+class MultiThread extends Thread {
+    
+    MultiThread() {
+        start();
+    }
+  
+    public void run() {
+        ChocolateBoilerSingletonTest test = new ChocolateBoilerSingletonTest();
+        test.execute();
     }
 }

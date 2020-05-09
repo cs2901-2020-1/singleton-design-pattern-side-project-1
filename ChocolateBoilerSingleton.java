@@ -1,17 +1,17 @@
-public class ChocoloteBoiletSingleton {
+public class ChocolateBoilerSingleton {
     
-    private static ChocoloteBoiletSingleton instance;
+    private static ChocolateBoilerSingleton instance;
     private boolean empty;
     private boolean boiled;
 
-    public ChocoloteBoiletSingleton() {
+    public ChocolateBoilerSingleton() {
         empty = true;
         boiled = false;
     }
 
-    public static ChocoloteBoiletSingleton getInstance() {
+    public static ChocolateBoilerSingleton getInstance() {
         if (instance == null) {
-            instance = new ChocoloteBoiletSingleton();
+            instance = new ChocolateBoilerSingleton();
         }
         return instance;
     }
