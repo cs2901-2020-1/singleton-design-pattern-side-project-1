@@ -3,6 +3,7 @@ public class ChocolateBoiler {
     private boolean boiled;
 
     public ChocolateBoiler() {
+        System.out.println("Constructor: Creación Objeto ChocolateBoiler");
         empty = true;
         boiled = false;
     }

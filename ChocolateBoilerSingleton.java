@@ -1,16 +1,16 @@
 public class ChocolateBoilerSingleton {
-    
     private static ChocolateBoilerSingleton instance;
     private boolean empty;
     private boolean boiled;
 
-    public ChocolateBoilerSingleton() {
+    private ChocolateBoilerSingleton() {
         empty = true;
         boiled = false;
     }
 
     public static ChocolateBoilerSingleton getInstance() {
         if (instance == null) {
+            System.out.println("getInstance: Creación de objeto ChocolateBoilerSingleton");
             instance = new ChocolateBoilerSingleton();
         }
         return instance;
